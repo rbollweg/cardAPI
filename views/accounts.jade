@@ -1,0 +1,24 @@
+extends layout
+block content
+    h1= title
+    table(border='1')
+        tr
+            th account id
+            th Money
+            th Name
+            th Points
+        each item in rows
+            tr
+                td= item.account_id
+                td= item.account_money
+                td= item.account_name
+                td= item.account_num_points
+    p Make a new account
+    form(action='/newaccount',method='post')
+        label(for='name') Username
+        input(id='name', type='text', value='', placeholder='Username', name='name')
+        label(for='money') Money
+        input(id='money', type='number', value='', placeholder='Money', name='money')
+        label(for='points') Points
+        input(id='points', type='number', value='', placeholder='Points', name='points')
+        input(type='submit',value='Submit',data-transition='fade', data-theme='c')
