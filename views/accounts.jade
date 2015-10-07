@@ -7,14 +7,25 @@ block content
             th Money
             th Name
             th Points
-        each item in rows
+        each row in rows
             tr
-                td= item.account_id
-                td= item.account_money
-                td= item.account_name
-                td= item.account_num_points
+                td= row.account_id
+                td= row.account_money
+                td= row.account_name
+                td= row.account_num_points
     p Make a new account
-    form(action='/newaccount',method='post')
+    form(action='/new',method='post')
+        label(for='name') Username
+        input(id='name', type='text', value='', placeholder='Username', name='name')
+        label(for='money') Money
+        input(id='money', type='number', value='', placeholder='Money', name='money')
+        label(for='points') Points
+        input(id='points', type='number', value='', placeholder='Points', name='points')
+        input(type='submit',value='Submit',data-transition='fade', data-theme='c')
+     p Update a current account
+    form(action='/update',method='post')
+        label(for='id') ID
+        input(id='id', type='number', value='', placeholder='ID', name='id')
         label(for='name') Username
         input(id='name', type='text', value='', placeholder='Username', name='name')
         label(for='money') Money

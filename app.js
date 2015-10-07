@@ -12,6 +12,8 @@ var users = require('./routes/users');
 
 var mysql = require('mysql');
 
+var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
+
 var app = express();
 
 // view engine setup
@@ -61,12 +63,20 @@ app.use(function (err, req, res, next) {
 });
 
 
-global.connection = mysql.createConnection({
+global.accounts_connection = mysql.createConnection({
     host: '127.0.0.1',
     port: '3000',
     user: 'root',
-    password: 'Nutsack12!',
+    password: '<omitted>',
     database: 'accounts'
+});
+
+global.users_connection = mysql.createConnection({
+    host: '127.0.0.1',
+    port: '3000',
+    user: 'root',
+    password: '<omitted>',
+    database: 'users'
 });
 
 connection.connect();
