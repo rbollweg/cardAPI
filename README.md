@@ -1,4 +1,7 @@
 # cardAPI
+
+Card API: Unfinished proof of concept with the end goal to create user ID cards with a value and point amount on them.
+
 Simple API for a database to hold users "card" info based on node.js, more of a proof of concept than anything.
 
 Database is simple mySQL, would probably want to use mongoBD for anything that requires a large amount of requests.
